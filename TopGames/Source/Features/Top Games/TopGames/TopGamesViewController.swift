@@ -56,10 +56,18 @@ extension TopGamesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let gameResultCell = tableView.dequeueReusableCell(withIdentifier: "TopGamesCell", for: indexPath)
-        gameResultCell.textLabel?.text = self.games[indexPath.row].game?.name?.capitalized
         
-        return gameResultCell
+        if let gameResultCell = tableView.dequeueReusableCell(withIdentifier: "TopGamesCell", for: indexPath) as? TopGamesCell,
+            let game = self.games[indexPath.row].game,
+            let gameImageURL = URL(string: game.imageURL ?? "") {
+            gameResultCell.nameLabel?.text = game.name?.capitalized
+            gameResultCell.positionLabel?.text = "\(indexPath.row + 1)"
+            gameResultCell.gameImageView?.load(url: gameImageURL)
+            
+            return gameResultCell
+        }
+        
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -71,5 +79,8 @@ extension TopGamesViewController: UITableViewDataSource {
 
 extension TopGamesViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
 }
 

@@ -17,7 +17,7 @@ public class Game: Mappable {
     
     public var id: Int?
     public var name: String?
-    public var url: String?
+    public var imageURL: String?
     public var popularity: Int?
     
     //**************************************************
@@ -34,7 +34,7 @@ public class Game: Mappable {
     public func mapping(map: Map) {
         self.id         <- map["id"]
         self.name       <- map["name"]
-        self.url        <- map["url"]
+        self.imageURL   <- map["box.large"]
         self.popularity <- map["popularity"]
     }
 }
