@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gFv-pB-Jai">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="779-Oa-K1f">
+            <objects>
+                <navigationController id="gFv-pB-Jai" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ptr-qe-U2D">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="J2K-hP-8HS" kind="relationship" relationship="rootViewController" id="0Mu-OV-LON"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gqa-bI-azq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-843" y="165"/>
+        </scene>
+        <!--Top Games-->
+        <scene sceneID="BHT-6N-BnK">
+            <objects>
+                <viewController id="J2K-hP-8HS" customClass="TopGamesViewController" customModule="TopGames" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZyY-oK-D4C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ok-ms-g5m">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopGamesCell" textLabel="3gk-M9-h0O" style="IBUITableViewCellStyleDefault" id="8Ze-zB-mUw">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Ze-zB-mUw" id="nT9-8f-vG1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3gk-M9-h0O">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="J2K-hP-8HS" id="oNt-ON-X6Z"/>
+                                    <outlet property="delegate" destination="J2K-hP-8HS" id="XbV-iu-eec"/>
+                                    <outlet property="prefetchDataSource" destination="J2K-hP-8HS" id="bq8-of-fCx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Ok-ms-g5m" firstAttribute="top" secondItem="ZjZ-kd-GHu" secondAttribute="top" id="4ZL-TT-7fw"/>
+                            <constraint firstItem="ZjZ-kd-GHu" firstAttribute="trailing" secondItem="0Ok-ms-g5m" secondAttribute="trailing" id="U7h-8S-udD"/>
+                            <constraint firstItem="0Ok-ms-g5m" firstAttribute="leading" secondItem="ZjZ-kd-GHu" secondAttribute="leading" id="fKo-1Y-ODQ"/>
+                            <constraint firstItem="ZjZ-kd-GHu" firstAttribute="bottom" secondItem="0Ok-ms-g5m" secondAttribute="bottom" id="hrt-wx-lxw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZjZ-kd-GHu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Top Games" id="cW6-Kv-TGJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="0Ok-ms-g5m" id="IwK-dB-2b7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlD-b5-6YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="165"/>
+        </scene>
+    </scenes>
+</document>
