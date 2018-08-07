@@ -47,6 +47,15 @@ class TopGamesViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? GameDetailViewController,
+            let index = sender as? Int {
+            destination.game = self.games[index].game
+        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
 }
 
 extension TopGamesViewController: UITableViewDataSource {
@@ -81,6 +90,10 @@ extension TopGamesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showDetail", sender: indexPath.row)
     }
 }
 

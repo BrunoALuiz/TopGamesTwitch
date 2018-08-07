@@ -105,11 +105,62 @@
                     <navigationItem key="navigationItem" title="Top Games" id="cW6-Kv-TGJ"/>
                     <connections>
                         <outlet property="tableView" destination="0Ok-ms-g5m" id="IwK-dB-2b7"/>
+                        <segue destination="iEd-qs-JQ7" kind="show" identifier="showDetail" id="dVd-90-Cz4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlD-b5-6YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="208.80000000000001" y="164.77832512315271"/>
+        </scene>
+        <!--Game Detail View Controller-->
+        <scene sceneID="3cf-CB-dTE">
+            <objects>
+                <viewController id="iEd-qs-JQ7" customClass="GameDetailViewController" customModule="TopGames" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xbq-s4-XNF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nvd-sC-NK8">
+                                <rect key="frame" x="20" y="108" width="335" height="456"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-EN-RXF">
+                                <rect key="frame" x="156.66666666666666" y="604" width="60.666666666666657" height="60.666666666666629"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJ5-Jb-xXk">
+                                        <rect key="frame" x="8" y="0.0" width="45" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viewers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUU-S6-FXQ">
+                                        <rect key="frame" x="0.0" y="40.333333333333371" width="60.666666666666664" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nvd-sC-NK8" firstAttribute="top" secondItem="X6y-bS-XfD" secondAttribute="top" constant="20" id="81m-hb-P1y"/>
+                            <constraint firstItem="X6y-bS-XfD" firstAttribute="trailing" secondItem="nvd-sC-NK8" secondAttribute="trailing" constant="20" id="J17-GJ-BpI"/>
+                            <constraint firstItem="XnN-EN-RXF" firstAttribute="centerX" secondItem="X6y-bS-XfD" secondAttribute="centerX" id="Xub-9g-GqA"/>
+                            <constraint firstItem="XnN-EN-RXF" firstAttribute="top" secondItem="nvd-sC-NK8" secondAttribute="bottom" constant="40" id="g4m-Nd-Vr1"/>
+                            <constraint firstItem="X6y-bS-XfD" firstAttribute="bottom" secondItem="XnN-EN-RXF" secondAttribute="bottom" constant="113.33333333333337" id="kKU-Rn-msY"/>
+                            <constraint firstItem="nvd-sC-NK8" firstAttribute="leading" secondItem="X6y-bS-XfD" secondAttribute="leading" constant="20" id="oOA-yO-WLL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X6y-bS-XfD"/>
+                    </view>
+                    <connections>
+                        <outlet property="gameImageView" destination="nvd-sC-NK8" id="TsD-4Z-okw"/>
+                        <outlet property="nameLabel" destination="cJ5-Jb-xXk" id="M0z-0w-TZU"/>
+                        <outlet property="viewersLabel" destination="DUU-S6-FXQ" id="dsp-iu-aX7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wli-ty-vEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1239" y="165"/>
         </scene>
     </scenes>
 </document>
